@@ -1,0 +1,85 @@
+@page "/resources"
+@* @inject ApplicationDatabaseContext *@
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<h1>Resources</h1>
+
+<form action="">
+    <div class="row">
+
+        <div class="col-3">
+            <label class="form-label" for="">Id</label>
+            <input type="number" class="form-control" @bind="newResource.Id">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label" for="">Name</label>
+            <input type="text" class="form-control" @bind="newResource.Name">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label" for="">Quantity</label>
+            <input type="number" class="form-control" @bind="newResource.Quantity">
+        </div>
+
+        <div class="col-3">
+            <label class="form-label" for="">Status</label>
+            <input type="number" class="form-control" @bind="newResource.Status">
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-success" @onclick="addResource">Submit</button>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var resource in resources) {
+            <tr>
+                <td>@resource.Id</td>
+                <td>@resource.Name</td>
+                <td>@resource.Quantity</td>
+                <td>@resource.Status</td>
+                <td>@resource.CreatedAt</td>
+                <td>@resource.UpdatedAt</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+@code {
+    public List<Resource> resources = new List<Resource>() {
+        new Resource() {
+            Id=1, Name="Mackbook", Quantity=3, Status=ResourceStatus.Available, 
+            CreatedAt=DateTime.Now, UpdatedAt=DateTime.Now}
+        };
+    
+    public Resource newResource = new Resource();
+
+    public async Task addResource() {
+        // Adding the resource to the list of resources
+        resources.Add(newResource);
+        // Cleaning the resources and making it blank
+        newResource = new Resource();
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync() {
+        
+    }
+}

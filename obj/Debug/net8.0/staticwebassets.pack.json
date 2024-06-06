@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Bulaya\\Projects\\LibRead\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LibRead.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LibRead.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Bulaya\\Projects\\LibRead\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Bulaya\\Projects\\LibRead\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Bulaya\\Projects\\LibRead\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Bulaya\\Projects\\LibRead\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LibRead.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LibRead.props",
+      "PackagePath": "build\\LibRead.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LibRead.props",
+      "PackagePath": "buildMultiTargeting\\LibRead.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LibRead.props",
+      "PackagePath": "buildTransitive\\LibRead.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
