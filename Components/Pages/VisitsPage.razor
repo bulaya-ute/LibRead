@@ -1,1 +1,95 @@
 @page "/visits"
+@* @inject VisitService visitService *@
+@* @inject ResourceService resourceService *@
+@* @inject MemberService memberService *@
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+
+<h1>Visits</h1>
+
+<form >
+    <div class="row">
+        <div class="col-4">
+            <select class="form-control" @bind="newVisit.memberId">
+                <option disabled>Select member</option>
+                @foreach (var member in members) {
+                    <option value="@member.Id">@member.Name - @member.IdentificationNumber</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-4">
+            <select class="form-control" @bind="resourceId">
+                <option disabled>Select Resource</option>
+                @foreach (var resource in resources) {
+                    <option value="@resource.Id">@resource.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-4">
+            <ul>
+                @foreach (var resource in newVisit.VisitResources) {
+                    <li>resource.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-success col-12"></button>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var resource in resources) {
+            <tr>
+                <td>@resource.Id</td>
+                <td>@resource.Name</td>
+                <td>@resource.Quantity</td>
+                <td>@resource.Status</td>
+                <td>@resource.CreatedAt</td>
+                <td>@resource.UpdatedAt</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+@code {
+    public List<Resource> resources = new List<Resource>() {
+        new Resource() {
+            Id=1, Name="Mackbook", Quantity=3, Status=ResourceStatus.Available, 
+            CreatedAt=DateTime.Now, UpdatedAt=DateTime.Now
+        },
+    };
+    
+    
+    public Resource newResource = new Resource();
+    public Resource newVisit = new Visit();
+
+    public async Task addResource() {
+        // add to database
+        await resourceService.Post(newResource);
+        resources = resourceService.Get();
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync() {
+        resources = resourceService.Get();
+    }
+}
