@@ -1,4 +1,5 @@
 global using Data;
+global using Services;
 using LibRead.Components;
 using Microsoft.EntityFrameworkCore;
 

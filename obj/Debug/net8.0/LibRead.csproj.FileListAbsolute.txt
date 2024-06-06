@@ -130,3 +130,4 @@ C:\Users\Bulaya\Projects\LibRead\obj\Debug\net8.0\refint\LibRead.dll
 C:\Users\Bulaya\Projects\LibRead\obj\Debug\net8.0\LibRead.pdb
 C:\Users\Bulaya\Projects\LibRead\obj\Debug\net8.0\LibRead.genruntimeconfig.cache
 C:\Users\Bulaya\Projects\LibRead\obj\Debug\net8.0\ref\LibRead.dll
+C:\Users\Bulaya\Projects\LibRead\obj\Debug\net8.0\LibRead.sourcelink.json

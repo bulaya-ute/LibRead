@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibRead")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d8f200e79250ac74b880c019e7b9a68302161fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibRead")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibRead")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
